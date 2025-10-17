@@ -16,7 +16,33 @@ USER_SECRET = os.getenv("USER_SECRET")
 USERNAME = os.getenv("GITHUB_USERNAME")
 PROCESSED_PATH = "/tmp/processed_requests.json"
 
-app = FastAPI()
+app = FastAPI(
+    title="TDS Project API",
+    description="Automated App Generator API",
+    version="1.0.0"
+)
+
+# === Health check endpoint ===
+@app.get("/")
+async def root():
+    return {
+        "status": "online",
+        "message": "TDS Project API is running",
+        "endpoints": {
+            "api": "/api-endpoint",
+            "docs": "/docs",
+            "health": "/health"
+        }
+    }
+
+@app.get("/health")
+async def health():
+    return {
+        "status": "healthy",
+        "service": "tds-project-api",
+        "github_username": USERNAME,
+        "secret_configured": USER_SECRET is not None
+    }
 
 # === Persistence for processed requests ===
 def load_processed():
