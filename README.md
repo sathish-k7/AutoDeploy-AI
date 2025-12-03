@@ -1,16 +1,16 @@
-# TDS Project 1 - Automated App Generator API
+# AutoDeploy - Automated App Generator API
 
 A FastAPI application that automatically generates web applications based on user requirements, creates GitHub repositories, and deploys them to GitHub Pages.
 
 ## Features
 
-- 🤖 AI-powered code generation using OpenAI
-- 🔄 GitHub repository creation and management
-- 📄 Automatic GitHub Pages deployment
-- 🔔 Webhook notifications on completion
-- 🔐 Secure authentication with secrets
-- 📦 Support for file attachments
-- ♻️ Duplicate request detection
+-  AI-powered code generation using OpenAI
+-  GitHub repository creation and management
+-  Automatic GitHub Pages deployment
+-  Webhook notifications on completion
+-  Secure authentication with secrets
+-  Support for file attachments
+-  Duplicate request detection
 
 ## Local Development
 
